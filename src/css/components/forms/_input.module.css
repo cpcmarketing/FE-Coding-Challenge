@@ -1,0 +1,3 @@
+.input {
+  @apply bg-transparent border border-neutral-50 p-1;
+}
