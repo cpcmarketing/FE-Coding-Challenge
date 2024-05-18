@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2022",
+    "baseUrl": ".",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -8,7 +8,7 @@
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node", // @see https://github.com/cypress-io/cypress/issues/27731
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -20,9 +20,15 @@
     ],
     "paths": {
       "@/*": ["./src/*"]
-    },
-    "baseUrl": "./"
+    }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "references": [
+    {
+      "path": "apps/acme"
+    },
+    {
+      "path": "apps/storybook"
+    }
+  ],
   "exclude": ["node_modules"]
 }
