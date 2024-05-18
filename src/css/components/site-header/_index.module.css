@@ -1,0 +1,6 @@
+.siteHeader {
+}
+
+.siteHeaderContainer {
+  @apply flex justify-between p-4;
+}
