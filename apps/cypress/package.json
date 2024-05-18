@@ -6,7 +6,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:open": "npx cypress open"
   },
-  "keywords": [],
   "author": "CPC Marketing <adelgado@cpcmarketing.com>",
   "license": "GPL-2.0-only",
   "devDependencies": {
