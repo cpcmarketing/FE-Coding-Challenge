@@ -1,10 +1,7 @@
-import styles from "@/css/components/main/_index.module.css";
-
 import { Metadata } from "next";
 
-import clsx from "clsx";
-
 import LoginForm from "@/js/components/forms/login";
+import Main from "@/js/components/main";
 
 export const metadata: Metadata = {
   title: "About",
@@ -12,8 +9,8 @@ export const metadata: Metadata = {
 
 export default function Login() {
   return (
-    <main className={clsx("site-main", styles.main)}>
+    <Main>
       <LoginForm />
-    </main>
+    </Main>
   );
 }
