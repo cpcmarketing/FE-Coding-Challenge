@@ -1,4 +1,4 @@
-import { join, dirname } from "path";
+import { join, dirname, resolve } from "path";
 
 /**
  * This function is used to resolve the absolute path of a package.
@@ -20,10 +20,38 @@ const config = {
     getAbsolutePath("@storybook/addon-essentials"),
     getAbsolutePath("@chromatic-com/storybook"),
     getAbsolutePath("@storybook/addon-interactions"),
+    getAbsolutePath("@storybook/addon-styling-webpack"),
   ],
   framework: {
     name: getAbsolutePath("@storybook/nextjs"),
     options: {},
+  },
+  webpackFinal: async (config) => {
+    config.module.rules.push({
+      test: /\.css$/,
+      use: [
+        {
+          loader: "postcss-loader",
+          options: {
+            postcssOptions: {
+              plugins: { tailwindcss: {}, autoprefixer: {} },
+            },
+          },
+        },
+      ],
+      include: [
+        resolve(__dirname, "../../../src/"),
+        resolve(__dirname, "../../../node_modules/tailwindcss"),
+      ],
+    });
+    config.resolve = {
+      ...config.resolve,
+      alias: {
+        ...config.resolve?.alias,
+        "@": resolve(__dirname, "../../../src/"),
+      },
+    };
+    return config;
   },
 };
 export default config;
