@@ -7,10 +7,7 @@ import Submit from "@/js/components/forms/form/components/submit";
 
 import { Formik } from "formik";
 
-type Values = {
-  username: string;
-  password: string;
-};
+import type { Values } from "@/js/types/login";
 
 export default function LoginForm() {
   // @todo: add error message for invalid username/password
@@ -22,6 +19,11 @@ export default function LoginForm() {
       }}
       onSubmit={async (values: Values) => {
         // @todo: wire-up back-end submission
+        console.log("[onSubmit]", values);
+      }}
+      validate={(values: Values) => {
+        // @todo: wire-up form validation
+        console.log("[validate]", values);
       }}
     >
       <Form>
