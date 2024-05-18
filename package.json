@@ -1,0 +1,18 @@
+{
+  "name": "fe-coding-challenge",
+  "version": "1.0.0",
+  "description": "A simple Next.js Interview Coding Challenge",
+  "author": "Alex Delgado <adelgado@cpcmarketing.com>",
+  "license": "GPL-2.0-only",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cpcmarketing/fe-coding-challenge.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "workspaces": [
+    "apps/*"
+  ]
+}
