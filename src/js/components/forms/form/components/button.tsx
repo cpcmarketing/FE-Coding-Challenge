@@ -12,11 +12,8 @@ export default function Fieldset({
 >) {
   return (
     <button
-      className={clsx(
-        "form__button",
-        `form__button_type_${props.type || "button"}`,
-        styles.button,
-      )}
+      type="button"
+      className={clsx("form__button", styles.button)}
       {...props}
     >
       {children}
