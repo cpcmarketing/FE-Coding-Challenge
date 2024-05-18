@@ -4,8 +4,7 @@
   "description": "CPC Marketing Cypress tests",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook:dev": "storybook dev -p 6006",
-    "storybook:build": "storybook build"
+    "cypress:open": "npx cypress open"
   },
   "keywords": [],
   "author": "CPC Marketing <adelgado@cpcmarketing.com>",
