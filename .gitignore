@@ -30,6 +30,9 @@ certificates/
 .next/
 out/
 
+# storybook
+*storybook.log
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
